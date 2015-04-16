@@ -2,23 +2,23 @@
 #include <stdlib.h>
 #include <time.h>
 
-void so(int day, int month, int year)
-{
-    
-}
-
-void geo(int day, int month, int year)
+void so()
 {
 
 }
 
-void informacion()
+void geo()
 {
-    printf("Fecha: %d-%d-%d\n", day, month, year);
+
+}
+
+void informacion(int day, int month, int year)
+{
+    printf("Fecha de compilacion: %d-%d-%d\n", day, month, year);
 	printf("Integrantes: Cesar Riutor, Diego Esparza, Rafael Vivar\n");
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     time_t t = time(NULL);
 	struct tm tm = *localtime(&t);
@@ -26,21 +26,21 @@ int main(int argc, char* argv[])
 	int month = tm.tm_mon + 1;
 	int year = tm.tm_year + 1900;
 
-
     if(strcmp(argv[1],"-so")==0)
     {
-        void so();
+        so();
     }
     if(strcmp(argv[1],"-geo")==0)
     {
-        void geo();
+        geo();
     }
     if(strcmp(argv[1],"-v")==0)
     {
-        void informacion();
+        informacion(day, month, year);
     }
-    if(strcmp(strcmp(argv[1],"-so")!=0 && strcmp(argv[1],"-geo")!=0 && argv[1],"-v")!=0)
+    if(strcmp(argv[1],"-so")!=0 && strcmp(argv[1],"-geo")!=0 && strcmp(argv[1],"-v")!=0)
     {
-        printf("\t\tOPCIÓN INCORRECTA!!\t\t");
+        printf("OPCION INCORRECTA!!");
     }
+    return 0;
 }
