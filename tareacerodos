@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
-void so()
+void so(FILE *archivo)
 {
+    while(archivo=!EOF)
+    {
 
+    }
 }
 
-void geo()
+void geo(FILE *archivo)
 {
 
 }
@@ -20,6 +23,8 @@ void informacion(int day, int month, int year)
 
 int main(int argc, char *argv[])
 {
+    FILE *archivo;
+    archivo=fopen(argv[4],"r+");
     time_t t = time(NULL);
 	struct tm tm = *localtime(&t);
 	int day = tm.tm_mday;
@@ -28,11 +33,11 @@ int main(int argc, char *argv[])
 
     if(strcmp(argv[1],"-so")==0)
     {
-        so();
+        so(archivo);
     }
     if(strcmp(argv[1],"-geo")==0)
     {
-        geo();
+        geo(archivo);
     }
     if(strcmp(argv[1],"-v")==0)
     {
